@@ -334,3 +334,13 @@ The error events are listed below:
 - StartIndexOutOfRangeError
 - EmptyMediaItemError
 - UndefinedError
+
+
+## ProGuard
+Depending on your ProGuard (DexGuard) config and usage, you may need to include the following lines in your `proguard-rules.pro` :
+
+```pro
+-keep interface com.kkstream.blendvisionloom.** { *; }
+
+-keep public class com.kkstream.blendvisionloom.** { *; }
+```

@@ -10,6 +10,7 @@ import com.kkstream.blendvisionloom.player.configuration.PlayerContext
 import com.kkstream.blendvisionloom.player.controller.BlendVisionPlayerController
 import com.kkstream.blendvisionloom.player.error.ErrorEvent
 import com.kkstream.blendvisionloom.player.eventListener.EventListener
+import com.kkstream.blendvisionloom.player.log.VideoEvent
 
 class PlayActivity : AppCompatActivity() {
 
@@ -80,7 +81,37 @@ class PlayActivity : AppCompatActivity() {
                 }
 
                 override fun onError(error: ErrorEvent): Boolean {
+                    // handle the following errors:
+                    // `BasicNetworkError`
+                    // `ServerResponseError`
+                    // `PlayerError`
+                    // `PaaSInternalError`
+                    // `StartIndexOutOfRangeError`
+                    // `EmptyMediaItemError`
+                    // `UndefinedError`
+                    //
+                    // return `true` to indicate that you have handled the event;
+                    // return `false` if you have not handled it,
+                    // and the error message displays on the built-in error view.
                     return false
+                }
+
+
+                override fun onVideoEvent(videoEvent: VideoEvent) {
+                    // handle the following video events:
+                    // `VideoPlaybackBegan`
+                    // `VideoPlaybackEnded`
+                    // `VideoPlaybackStopped`
+                    // `VideoPlaybackErrorOccurred`
+                    // `Play`
+                    // `Pause`
+                    // `Rewind`
+                    // `Forward`
+                    // `NextEpisode`
+                    // `PreviousEpisode`
+                    // `VideoSeekingEnded`
+                    // `SettingPageEntered`
+                    // `SettingPageExited`
                 }
             }
         )

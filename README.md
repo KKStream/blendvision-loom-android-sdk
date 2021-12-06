@@ -335,6 +335,124 @@ The error events are listed below:
 - EmptyMediaItemError
 - UndefinedError
 
+## Handling the video event
+
+It is possible to listen to the video event, like video playback began, video playback ended, play button click, for video tracking or analysis.
+
+The code snippet below shows how to listen the video event. Once a video event occurs, the method `onVideoEvent` in EventListener is called.
+
+```kotlin
+BlendVisionLoomPlayer.presentPlayer(
+    ...
+    eventListener = object : EventListener {
+        ...
+        // Handel the video events
+        fun onVideoEvent(videoEvent: VideoEvent) {
+            when (videoEvent) {
+                is VideoEvent.VideoPlaybackBegan -> {
+                    // Get the index and position of the video
+                    val index = videoEvent.contentIndex
+                    val position = videoEvent.position
+                    ...
+                }
+                is VideoEvent.VideoPlaybackEnded -> {
+                    // Get the index and position of the video
+                    val index = videoEvent.contentIndex
+                    val position = videoEvent.position
+                    ...
+                }
+                is VideoEvent.VideoPlaybackStopped -> {
+                    // Get the index and played duration of the video
+                    val index = videoEvent.contentIndex
+                    val playedDuration = videoEvent.playedDuration
+                    ...
+                }
+                is VideoEvent.VideoPlaybackErrorOccurred -> {
+                    // Get the index, position and error of the video
+                    val index = videoEvent.contentIndex
+                    val position = videoEvent.position
+                    var error = videoEvent.error
+                    ...
+                }
+                is VideoEvent.Play -> {
+                    // Get the index and position of the video
+                    val index = videoEvent.contentIndex
+                    val position = videoEvent.position
+                    ...
+                }
+                is VideoEvent.Pause -> {
+                    // Get the index and position of the video
+                    val index = videoEvent.contentIndex
+                    val position = videoEvent.position
+                    ...
+                }
+                is VideoEvent.Rewind -> {
+                    // Get the index and position of the video
+                    val index = videoEvent.contentIndex
+                    val position = videoEvent.position
+                    ...
+                }
+                is VideoEvent.Forward -> {
+                    // Get the index and position of the video
+                    val index = videoEvent.contentIndex
+                    val position = videoEvent.position
+                    ...
+                }
+                is VideoEvent.PreviousEpisode -> {
+                    // Get the index and position of the video
+                    val index = videoEvent.contentIndex
+                    val position = videoEvent.position
+                    ...
+                }
+                is VideoEvent.NextEpisode -> {
+                    // Get the index and position of the video
+                    val index = videoEvent.contentIndex
+                    val position = videoEvent.position
+                    ...
+                }
+                is VideoEvent.VideoSeekingEnded -> {
+                    // Get the index, seek from/to of the video
+                    val index = videoEvent.contentIndex
+                    val seekFrom = videoEvent.seekFrom
+                    val seekTo = videoEvent.seekTo
+                    ...
+                }
+                is VideoEvent.SettingPageEntered -> {
+                    // Get the index of the video
+                    val index = videoEvent.contentIndex
+                    ...
+                }
+                is VideoEvent.SettingPageExited ->{
+                    // Get the index of the video
+                    val index = videoEvent.contentIndex
+                    ...
+                }
+                else -> {
+                }
+            }
+        }
+    }
+)
+```
+
+
+The supported video events are listed below:
+
+- `VideoPlaybackBegan` which is triggered when the media has began.
+- `VideoPlaybackEnded` which is triggered when the media has ended.
+- `VideoPlaybackStopped` which is triggered when the media is stopped.
+- `VideoPlaybackErrorOccurred` which is triggered when an error occurs.
+- `Play` which is triggered when the media is played.
+- `Pause` which is triggered when the media is paused.
+- `Rewind` which is triggered when the media is rewound.
+- `Forward` which is triggered when the media is forwarded.
+- `NextEpisode` which is triggered when the media is skipped to the next episode.
+- `PreviousEpisode` which is triggered when the media is skipped to the previous episode.
+- `VideoSeekingEnded` which is triggered when the media has been seeking ended.
+- `SettingPageEntered` which is triggered when the setting page has been entered.
+- `SettingPageExited` which is triggered when the setting page has been exited.
+
+
 
 ## ProGuard
 Depending on your ProGuard (DexGuard) config and usage, you may need to include the following lines in your `proguard-rules.pro` :

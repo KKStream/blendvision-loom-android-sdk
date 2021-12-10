@@ -74,6 +74,7 @@ class PlayActivity : AppCompatActivity() {
                     // `isFullscreen`
                     // `replay`
                     // `mute` and `unmute`
+                    // `release` and `restart`
                 }
 
                 override fun onPlaybackEnd(index: Int) {

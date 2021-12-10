@@ -320,6 +320,8 @@ Once the player has been prepared, playback can be controlled by calling methods
 - `isFullscreen` indicates whether the fullscreen mode or not
 - `replay` replay playback.
 - `mute` and `unmute` mute and unmute audio in the media
+- `release` release the underlying player 
+- `restart` re-initialize the underlying player and restart playback
 
 ## Handling the error
 

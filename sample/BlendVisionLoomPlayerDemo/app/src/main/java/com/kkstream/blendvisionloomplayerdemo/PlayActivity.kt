@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.kkstream.blendvisionloom.player.BlendVisionLoomPlayer
+import com.kkstream.blendvisionloom.player.configuration.Configuration
 import com.kkstream.blendvisionloom.player.configuration.MediaItem
 import com.kkstream.blendvisionloom.player.configuration.PlayerContext
 import com.kkstream.blendvisionloom.player.controller.BlendVisionPlayerController
@@ -14,9 +15,9 @@ import com.kkstream.blendvisionloom.player.log.VideoEvent
 
 class PlayActivity : AppCompatActivity() {
 
-    val JWT: String = "JWT_TOKEN"
+    private val JWT: String = "JWT_TOKEN"
 
-    val mediaItems: List<MediaItem> =
+    private val mediaItems: List<MediaItem> =
         listOf(
             MediaItem(
                 contentId = "CONTENT_ID",
@@ -41,7 +42,16 @@ class PlayActivity : AppCompatActivity() {
             )
         )
 
-    var controller: BlendVisionPlayerController? = null
+    private var controller: BlendVisionPlayerController? = null
+
+    private val configuration: Configuration by lazy {
+        Configuration(
+            isPreCacheEnable = false, // set true to enable pre-caching function,
+                                      // then call `cancelPreCacheAndPlay` to cancel pre-caching and start playback
+            maxBufferMs = 90000 // set the maximum duration of a playback
+                                // that the player will attempt to buffer, in milliseconds.
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,7 +62,8 @@ class PlayActivity : AppCompatActivity() {
         BlendVisionLoomPlayer.presentPlayer(
             playerContext = PlayerContext(
                 activity = this,
-                container = container
+                container = container,
+                configuration = configuration
             ),
             mediaItems = mediaItems,
             // The beginning index [0, mediaItems.length()) of media items.
@@ -64,6 +75,7 @@ class PlayActivity : AppCompatActivity() {
                     // Application can get the instance of controller from this callback
                     // and then use the controller to perform the following operations:
                     // `play` and `pause`
+                    // `isPlaying`
                     // `previous`, `next`
                     // `rewind` and `forward`
                     // `showController`
@@ -75,10 +87,15 @@ class PlayActivity : AppCompatActivity() {
                     // `replay`
                     // `mute` and `unmute`
                     // `release` and `restart`
+                    // `cancelPreCacheAndPlay`
+                }
+
+                override fun onPlaybackReady(index: Int) {
+                    // logic when playback is ready to play after buffered enough duration for the media at [index]
                 }
 
                 override fun onPlaybackEnd(index: Int) {
-                    // logic when playback END for the media at [index]
+                    // logic when playback is end for the media at [index]
                 }
 
                 override fun onError(error: ErrorEvent): Boolean {

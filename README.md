@@ -13,7 +13,7 @@ The SDK supports
 
 ### AAR
 
-- Copy the following files required in the `sdk` folder to the `lib` folder in your project:
+- Copy the following files required to the `lib` folder in your project:
 
 ```
 blendvisionloomplayer-(latest_version).aar
@@ -129,13 +129,18 @@ BlendVisionLoomPlayer.presentPlayer(
             // Control player using BlendVisionPlayerController
         }
 
+        override fun onPlaybackReady(index: Int) {
+           // logic when playback is ready to play after buffered enough duration for the media at [index]
+        }
+
         override fun onPlaybackEnd(index: Int) {
-            // logic when playback END for the media at [index]
+            // logic when playback is end for the media at [index]
         }
 
         override fun onError(error: ErrorEvent): Boolean {
             // Handle the error
         }
+
     }
 )
 ```
@@ -310,6 +315,7 @@ BlendVisionLoomPlayer.presentPlayer(
 Once the player has been prepared, playback can be controlled by calling methods on the BlendVisionPlayerController. The supported methods are listed below:
 
 - `play` and `pause` start and pause playback.
+- `isPlaying` indicates whether the current playback is playing
 - `previous`, `next`, `hasPrevious` and `hasNext` allow navigating through the playlist.
 - `rewind` and `forward` rewind and fast-forward in the media (10 seconds).
 - `showController` controls the visibility of the controller icons and progress bar.
@@ -322,6 +328,7 @@ Once the player has been prepared, playback can be controlled by calling methods
 - `mute` and `unmute` mute and unmute audio in the media
 - `release` release the underlying player 
 - `restart` re-initialize the underlying player and restart playback
+- `cancelPreCacheAndPlay` canel pre-caching and start playback
 
 ## Handling the error
 
@@ -454,6 +461,44 @@ The supported video events are listed below:
 - `SettingPageEntered` which is triggered when the setting page has been entered.
 - `SettingPageExited` which is triggered when the setting page has been exited.
 
+## Pre-Caching
+The BlendVisionLoomPlayer support pre-caching the streaming before the playback begins to play. The code snippet below show how to enable pre-caching function and cancel the caching to play.
+
+**enable pre-caching**
+```kotlin
+BlendVisionLoomPlayer.presentPlayer(
+    playerContext = PlayerContext(
+        ...
+        configuration = Configuration(isPreCacheEnable = true)
+    ),
+    ...
+)
+```
+
+**cancel pre-caching and play**
+```kotlin
+private var controller: BlendVisionPlayerController? = null
+...
+controller?.cancelPreCacheAndPlay()
+```
+
+## Set maximum buffer duration
+It is possible to adjust the maximum duration of a playback that the player will attempt to buffer, in milliseconds. 
+We call the value as `maxBufferMs`. The default maximum is 50000ms, and the lower limit of `maxBufferMs` is 15000ms. 
+Any value of `maxBufferMs` set to less than 15000ms will be set to 15000ms.
+
+Note that the buffering duration may be affected by bandwidth, memory, device capability and may not reach to the maximum during playback duration.
+
+The code snippet below show how to set `maxBufferMs`.
+```kotlin
+BlendVisionLoomPlayer.presentPlayer(
+    playerContext = PlayerContext(
+        ...
+        configuration = Configuration(maxBufferMs = 30000)
+    ),
+    ...
+)
+```
 
 
 ## ProGuard

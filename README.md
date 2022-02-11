@@ -328,7 +328,8 @@ Once the player has been prepared, playback can be controlled by calling methods
 - `mute` and `unmute` mute and unmute audio in the media
 - `release` release the underlying player 
 - `restart` re-initialize the underlying player and restart playback
-- `cancelPreCacheAndPlay` canel pre-caching and start playback
+- `cancelPreCacheAndPlay` cancel pre-caching and start playback
+- `cancelPreCache` cancel pre-caching
 
 ## Handling the error
 
@@ -462,9 +463,11 @@ The supported video events are listed below:
 - `SettingPageExited` which is triggered when the setting page has been exited.
 
 ## Pre-Caching
-The BlendVisionLoomPlayer support pre-caching the streaming before the playback begins to play. The code snippet below show how to enable pre-caching function and cancel the caching to play.
+The BlendVisionLoomPlayer supports pre-caching the streaming before playing playback. The code snippet below shows how to enable pre-caching function and how to cancel the caching then to play.
 
-**enable pre-caching**
+Note that the maximum size of the cache is 100 MB and the caching mechanism will evict the least recently used cache files first when the cache is full.
+
+**Enable pre-caching**
 ```kotlin
 BlendVisionLoomPlayer.presentPlayer(
     playerContext = PlayerContext(
@@ -475,11 +478,18 @@ BlendVisionLoomPlayer.presentPlayer(
 )
 ```
 
-**cancel pre-caching and play**
+**Cancel pre-caching and play**
 ```kotlin
 private var controller: BlendVisionPlayerController? = null
 ...
 controller?.cancelPreCacheAndPlay()
+```
+
+**Cancel pre-caching**
+```kotlin
+private var controller: BlendVisionPlayerController? = null
+...
+controller?.cancelPreCache()
 ```
 
 ## Set maximum buffer duration

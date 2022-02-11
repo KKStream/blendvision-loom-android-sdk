@@ -88,6 +88,7 @@ class PlayActivity : AppCompatActivity() {
                     // `mute` and `unmute`
                     // `release` and `restart`
                     // `cancelPreCacheAndPlay`
+                    // `cancelPreCache`
                 }
 
                 override fun onPlaybackReady(index: Int) {

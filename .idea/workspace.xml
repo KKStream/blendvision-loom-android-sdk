@@ -25,25 +25,13 @@
     <list default="true" id="8477f7f6-55b1-4a4f-a282-200f1b383961" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/blendvisionloomplayer-1.1.3.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kks-playcraft-daas-1.1.28.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kks-playcraft-paas-1.1.28.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kksplayer-2.1.23.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kksplayer-kkdrm-2.1.23.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kksplayer-library-core-2.1.23.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kksplayer-library-dash-2.1.23.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kksplayer-library-hls-2.1.23.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kksplayer-library-ui-2.1.23.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/blendvisionloomplayer-1.2.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kks-playcraft-daas-1.1.30.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kks-playcraft-paas-1.1.30.aar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/src/main/java/com/kkstream/blendvisionloomplayerdemo/PlayActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/src/main/java/com/kkstream/blendvisionloomplayerdemo/PlayActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/blendvisionloomplayer-1.1.3.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/kks-playcraft-daas-1.1.28.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/kks-playcraft-paas-1.1.28.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/kksplayer-2.1.23.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/kksplayer-kkdrm-2.1.23.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/kksplayer-library-core-2.1.23.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/kksplayer-library-dash-2.1.23.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/kksplayer-library-hls-2.1.23.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/kksplayer-library-ui-2.1.23.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/blendvisionloomplayer-1.2.0.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/kks-playcraft-daas-1.1.30.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/kks-playcraft-paas-1.1.30.aar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +50,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -87,5 +78,15 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1644979613395">
+      <screen x="0" y="25" width="1440" height="796" />
+    </state>
+    <state x="184" y="82" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.796@0.25.1440.796" timestamp="1644979613395" />
+    <state x="208" y="25" key="SettingsEditor" timestamp="1644978436471">
+      <screen x="0" y="25" width="1440" height="875" />
+    </state>
+    <state x="208" y="25" key="SettingsEditor/0.25.1440.875/-1920.25.1920.976@0.25.1440.875" timestamp="1644978436471" />
   </component>
 </project>

@@ -126,19 +126,24 @@ BlendVisionLoomPlayer.presentPlayer(
     // The listener for any changes in the player.
     eventListener = object : EventListener {
         override fun onPlayerReady(controller: BlendVisionPlayerController) {
-            // Control player using BlendVisionPlayerController
+            // Called when the player is setup and the controller is available
         }
 
         override fun onPlaybackReady(index: Int) {
-           // logic when playback is ready to play after buffered enough duration for the media at [index]
+           // Called when the playback is able to immediately play from its current position for the media at [index]
+        }
+
+        override fun onPlaybackReady(index: Int, playWhenReady: Boolean) {
+           // Called when the playback is able to immediately play from its current position with
+           // the playWhenReady flag to indicate whether the playback will proceed for the media at [index]
         }
 
         override fun onPlaybackEnd(index: Int) {
-            // logic when playback is end for the media at [index]
+            // Called when the playback is ended for the media at [index]
         }
 
         override fun onError(error: ErrorEvent): Boolean {
-            // Handle the error
+            // Called when an error occurs.
         }
 
     }

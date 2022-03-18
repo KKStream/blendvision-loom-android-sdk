@@ -24,14 +24,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8477f7f6-55b1-4a4f-a282-200f1b383961" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/blendvisionloomplayer-1.2.0.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kks-playcraft-daas-1.1.30.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/libs/kks-playcraft-paas-1.1.30.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/src/main/java/com/kkstream/blendvisionloomplayerdemo/PlayActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/sample/BlendVisionLoomPlayerDemo/app/src/main/java/com/kkstream/blendvisionloomplayerdemo/PlayActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/blendvisionloomplayer-1.2.0.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/kks-playcraft-daas-1.1.30.aar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/kks-playcraft-paas-1.1.30.aar" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

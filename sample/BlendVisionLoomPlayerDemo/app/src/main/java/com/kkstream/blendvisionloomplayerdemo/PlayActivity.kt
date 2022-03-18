@@ -2,6 +2,7 @@ package com.kkstream.blendvisionloomplayerdemo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.kkstream.blendvisionloom.player.BlendVisionLoomPlayer
@@ -71,6 +72,7 @@ class PlayActivity : AppCompatActivity() {
             // The listener for any changes in the player.
             eventListener = object : EventListener {
                 override fun onPlayerReady(controller: BlendVisionPlayerController) {
+                    Log.i(TAG, "onPlayerReady: ")
                     this@PlayActivity.controller = controller
                     // Called when the player is setup and the controller is available
                     // and then use the controller to perform the following operations:
@@ -89,22 +91,29 @@ class PlayActivity : AppCompatActivity() {
                     // `release` and `restart`
                     // `cancelPreCacheAndPlay`
                     // `cancelPreCache`
+                    // `getPosition`
+                    // `getBuffered`
+                    // `getDuration`
                 }
 
                 override fun onPlaybackReady(index: Int) {
+                    Log.i(TAG, "onPlaybackReady: index=$index")
                     // Called when the playback is able to immediately play from its current position for the media at [index]
                 }
 
                 override fun onPlaybackReady(index: Int, playWhenReady: Boolean) {
+                    Log.i(TAG, "onPlaybackReady: index=$index, playWhenReady=$playWhenReady")
                     // Called when the playback is able to immediately play from its current position with
                     // the playWhenReady flag to indicate whether the playback will proceed for the media at [index]
                 }
 
                 override fun onPlaybackEnd(index: Int) {
+                    Log.i(TAG, "onPlaybackEnd: index=$index")
                     // Called when the playback is ended for the media at [index]
                 }
 
                 override fun onError(error: ErrorEvent): Boolean {
+                    Log.i(TAG, "onError: error=$error")
                     // Called when the following errors occur:
                     // `BasicNetworkError`
                     // `ServerResponseError`
@@ -122,6 +131,7 @@ class PlayActivity : AppCompatActivity() {
 
 
                 override fun onVideoEvent(videoEvent: VideoEvent) {
+                    Log.i(TAG, "onVideoEvent: videoEvent=$videoEvent")
                     // Called when the following video events occur:
                     // `VideoPlaybackBegan`
                     // `VideoPlaybackEnded`
@@ -139,5 +149,9 @@ class PlayActivity : AppCompatActivity() {
                 }
             }
         )
+    }
+
+    companion object {
+        const val TAG = "PlayActivity"
     }
 }

@@ -335,6 +335,10 @@ Once the player has been prepared, playback can be controlled by calling methods
 - `restart` re-initialize the underlying player and restart playback
 - `cancelPreCacheAndPlay` cancel pre-caching and start playback
 - `cancelPreCache` cancel pre-caching
+- `getPosition` return the playback position in the current content, in milliseconds
+- `getBuffered` return an estimated of the position in the current content up to which data is buffered, in milliseconds
+- `getDuration` return the duration of the current content, in milliseconds
+
 
 ## Handling the error
 

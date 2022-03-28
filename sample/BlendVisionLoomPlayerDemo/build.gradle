@@ -15,6 +15,7 @@ buildscript {
     ext.rx_kotlin_version = '2.3.0'
     ext.androidx_room_version = '2.3.0'
     ext.lifecycle_viewmodel_ktx = "2.3.1"
+    ext.guavaVersion = '27.1-android'
 
     repositories {
         google()

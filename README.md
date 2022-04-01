@@ -17,15 +17,17 @@ The SDK supports
 
 ```
 blendvisionloomplayer-(latest_version).aar
-kksplayer-library-ui-(kksplayer_version).aar
-kksplayer-library-hls-(kksplayer_version).aar
-kksplayer-library-dash-(kksplayer_version).aar
-kksplayer-library-core-(kksplayer_version).aar
-kksplayer-kkdrm-(kksplayer_version).aar
+kks-network-(latest_version).aar
+kks-playcraft-paas-(latest_version).aar
+kks-playcraft-daas-(latest_version).aar
 kksplayer-(kksplayer_version).aar
-kks-paas-release-(kks_paas_version).aar
-kks-network-(kks_network_version).aar
-kks-daas-release-(kks_daas_version).aar
+kksplayer-kkdrm-(kksplayer_version).aar
+kksplayer-library-common-(kksplayer_version).aar
+kksplayer-library-core-(kksplayer_version).aar
+kksplayer-library-dash-(kksplayer_version).aar
+kksplayer-library-extractor-(kksplayer_version).aar
+kksplayer-library-hls-(kksplayer_version).aar
+kksplayer-library-ui-(kksplayer_version).aar
 ```
 
 ### Gradle Setting

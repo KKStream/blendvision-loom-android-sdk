@@ -17,15 +17,17 @@ The SDK supports
 
 ```
 blendvisionloomplayer-(latest_version).aar
-kksplayer-library-ui-(kksplayer_version).aar
-kksplayer-library-hls-(kksplayer_version).aar
-kksplayer-library-dash-(kksplayer_version).aar
-kksplayer-library-core-(kksplayer_version).aar
-kksplayer-kkdrm-(kksplayer_version).aar
+kks-network-(latest_version).aar
+kks-playcraft-paas-(latest_version).aar
+kks-playcraft-daas-(latest_version).aar
 kksplayer-(kksplayer_version).aar
-kks-paas-release-(kks_paas_version).aar
-kks-network-(kks_network_version).aar
-kks-daas-release-(kks_daas_version).aar
+kksplayer-kkdrm-(kksplayer_version).aar
+kksplayer-library-common-(kksplayer_version).aar
+kksplayer-library-core-(kksplayer_version).aar
+kksplayer-library-dash-(kksplayer_version).aar
+kksplayer-library-extractor-(kksplayer_version).aar
+kksplayer-library-hls-(kksplayer_version).aar
+kksplayer-library-ui-(kksplayer_version).aar
 ```
 
 ### Gradle Setting
@@ -66,6 +68,15 @@ dependencies {
     implementation "androidx.room:room-runtime:$androidx_room_version"
     kapt "androidx.room:room-compiler:$androidx_room_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_viewmodel_ktx"
+
+    // To support com/google/common/collect/Sets
+    api ('com.google.guava:guava:' + guavaVersion) {
+        exclude group: 'com.google.code.findbugs', module: 'jsr305'
+        exclude group: 'org.checkerframework', module: 'checker-compat-qual'
+        exclude group: 'com.google.errorprone', module: 'error_prone_annotations'
+        exclude group: 'com.google.j2objc', module: 'j2objc-annotations'
+        exclude group: 'org.codehaus.mojo', module: 'animal-sniffer-annotations'
+    }
 }
 ```
 

@@ -49,8 +49,9 @@ class PlayActivity : AppCompatActivity() {
         Configuration(
             isPreCacheEnable = false, // set true to enable pre-caching function,
                                       // then call `cancelPreCacheAndPlay` to cancel pre-caching and start playback
-            maxBufferMs = 90000 // set the maximum duration of a playback
+            maxBufferMs = 90000, // set the maximum duration of a playback
                                 // that the player will attempt to buffer, in milliseconds.
+            isD3Mode = false    // trigger the D3 mode for LL-DASH
         )
     }
 
@@ -107,6 +108,11 @@ class PlayActivity : AppCompatActivity() {
                     // the playWhenReady flag to indicate whether the playback will proceed for the media at [index]
                 }
 
+                override fun onPlaybackBuffering(index: Int) {
+                    Log.i(TAG, "onPlaybackBuffering: index=$index")
+                    // Called when the playback is buffering for the media at [index]
+                }
+
                 override fun onPlaybackEnd(index: Int) {
                     Log.i(TAG, "onPlaybackEnd: index=$index")
                     // Called when the playback is ended for the media at [index]
@@ -146,6 +152,11 @@ class PlayActivity : AppCompatActivity() {
                     // `VideoSeekingEnded`
                     // `SettingPageEntered`
                     // `SettingPageExited`
+                }
+
+                override fun onVideoSizeChanged(width: Int, height: Int) {
+                    Log.i(TAG, "onVideoSizeChanged: width=$width, height=$height")
+                    // Called when current video size changed
                 }
             }
         )

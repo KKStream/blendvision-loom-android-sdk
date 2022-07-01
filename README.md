@@ -149,12 +149,20 @@ BlendVisionLoomPlayer.presentPlayer(
            // the playWhenReady flag to indicate whether the playback will proceed for the media at [index]
         }
 
+        override fun onPlaybackBuffering(index: Int) {
+            // Called when the playback is buffering for the media at [index]
+        }
+
         override fun onPlaybackEnd(index: Int) {
             // Called when the playback is ended for the media at [index]
         }
 
         override fun onError(error: ErrorEvent): Boolean {
             // Called when an error occurs.
+        }
+
+        override fun onVideoSizeChanged(width: Int, height: Int) {
+            // Called when a video size changed
         }
 
     }
@@ -349,7 +357,8 @@ Once the player has been prepared, playback can be controlled by calling methods
 - `getPosition` return the playback position in the current content, in milliseconds
 - `getBuffered` return an estimated of the position in the current content up to which data is buffered, in milliseconds
 - `getDuration` return the duration of the current content, in milliseconds
-
+- `setToDefaultPosition` seeks to the default position of the current media, in milliseconds. For live streaming, it will be the position close to the live edge. For VOD, it will be the start position.
+- `getEstimatedLatency` return the estimated end-to-end latency by player
 
 ## Handling the error
 
@@ -530,6 +539,19 @@ BlendVisionLoomPlayer.presentPlayer(
 )
 ```
 
+## Enable D3 mode
+For the manifest which support low latency mode (LL-DASH), Player can be enabled to D3 mode, which ensure the end-to-end latency less than 3 second with health connection.
+
+The code snippet below show how to enable D3 mode.
+```kotlin
+BlendVisionLoomPlayer.presentPlayer(
+    playerContext = PlayerContext(
+        ...
+        configuration = Configuration(isD3Mode = true)
+    ),
+    ...
+)
+```
 
 ## ProGuard
 Depending on your ProGuard (DexGuard) config and usage, you may need to include the following lines in your `proguard-rules.pro` :
